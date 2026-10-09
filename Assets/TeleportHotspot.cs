@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class TeleportHotspot : MonoBehaviour
 {
-    [Header("Objeto da Foto 360")]
-    [Tooltip("Arraste aqui a Esfera Invertida onde a foto 360 é exibida.")]
-    public Renderer esferaRenderer;
+    [Header("Referência ao Gerenciador")]
+    public Photo360Manager photoManager;
 
-    [Header("Configurações da Nova Foto")]
-    [Tooltip("Arraste a nova textura 360 para esta variável.")]
-    public Texture2D novaFoto360;
+    [Header("Foto de Destino Deste Hotspot")]
+    [Tooltip("A foto para onde este portal vai te levar.")]
+    public Texture2D fotoDestino;
 
     public void MudarFoto()
     {
-        esferaRenderer.material.SetTexture("_BaseMap", novaFoto360);
+        Texture2D fotoDeOndeVim = photoManager.TransitarParaFoto(fotoDestino);
+        fotoDestino = fotoDeOndeVim;
     }
 }

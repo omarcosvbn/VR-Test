@@ -119,6 +119,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &508806378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 508806380}
+  - component: {fileID: 508806379}
+  m_Layer: 0
+  m_Name: PhotoManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &508806379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508806378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba49b0d845143754e8632acf0b973a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Photo360Manager
+  esferaRenderer: {fileID: 529931897}
+  imagemAtual: {fileID: 0}
+  imagemAnterior: {fileID: 0}
+--- !u!4 &508806380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508806378}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.42238, y: -0, z: -0.10817}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &529931897 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 85532c3188e203c43858c4c9ae4ab2bf, type: 3}
@@ -158,8 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48270643082056d439d68883d0f1b246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportHotspot
-  esferaRenderer: {fileID: 529931897}
-  novaFoto360: {fileID: 2800000, guid: 2bc03099be85a2343a3ce011e5efffb0, type: 3}
+  photoManager: {fileID: 508806379}
+  fotoDestino: {fileID: 2800000, guid: faf10bfb258feaa4e98e6d86d859cfb2, type: 3}
 --- !u!114 &568314960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -354,7 +401,7 @@ Transform:
   m_GameObject: {fileID: 568314958}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -487,8 +534,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48270643082056d439d68883d0f1b246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportHotspot
-  esferaRenderer: {fileID: 529931897}
-  novaFoto360: {fileID: 2800000, guid: acf3b7ce7c2771b4c8f419a1063a6d87, type: 3}
+  photoManager: {fileID: 508806379}
+  fotoDestino: {fileID: 2800000, guid: acf3b7ce7c2771b4c8f419a1063a6d87, type: 3}
 --- !u!114 &705757768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -707,8 +754,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48270643082056d439d68883d0f1b246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TeleportHotspot
-  esferaRenderer: {fileID: 529931897}
-  novaFoto360: {fileID: 2800000, guid: acf3b7ce7c2771b4c8f419a1063a6d87, type: 3}
+  photoManager: {fileID: 0}
+  fotoDestino: {fileID: 0}
 --- !u!114 &921342973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1379,3 +1426,4 @@ SceneRoots:
   - {fileID: 705757766}
   - {fileID: 568314965}
   - {fileID: 921342978}
+  - {fileID: 508806380}
