@@ -6,23 +6,19 @@ public class InputControllerEsquerdo : MonoBehaviour
     [Header("Referência ao Gerenciador")]
     public Photo360Manager photoManager;
 
-    [Header("Ação do Trigger Esquerdo")]
-    [Tooltip("Arraste a Input Action correspondente ao Trigger do Left Controller.")]
-    public InputActionProperty leftTriggerAction;
+    [Header("Atalho do Teclado para Testes no Editor")]
+    [Tooltip("Tecla para abrir/fechar o painel no simulador.")]
+    public Key teclaAtalho = Key.G;
 
-    private void OnEnable()
+    private void Update()
     {
-        leftTriggerAction.action.Enable();
-        leftTriggerAction.action.performed += OnTriggerPressed;
+        if (Keyboard.current != null && Keyboard.current[teclaAtalho].wasPressedThisFrame)
+        {
+            AlternarPainel();
+        }
     }
 
-    private void OnDisable()
-    {
-        leftTriggerAction.action.performed -= OnTriggerPressed;
-        leftTriggerAction.action.Disable();
-    }
-
-    private void OnTriggerPressed(InputAction.CallbackContext context)
+    private void AlternarPainel()
     {
             photoManager.AlternarPainelInfo();
     }

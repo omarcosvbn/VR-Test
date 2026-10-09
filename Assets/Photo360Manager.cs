@@ -47,7 +47,20 @@ public class Photo360Manager : MonoBehaviour
     }
 
     private void AtualizarUI()
+{
+    if (imagemAtual == null) return;
+
+    FotoInfo info = listaFotos.Find(f => f.textura360 != null && f.textura360.name == imagemAtual.name);
+
+    if (info != null)
     {
-        FotoInfo info = listaFotos.Find(f => f.textura360 == imagemAtual);
+        if (textoTitulo != null) textoTitulo.text = info.titulo;
+        if (textoDescricao != null) textoDescricao.text = info.descricao;
     }
+    else
+    {
+        if (textoTitulo != null) textoTitulo.text = imagemAtual.name;
+        if (textoDescricao != null) textoDescricao.text = "Sem descrição cadastrada na Lista Fotos.";
+    }
+}
 }
